@@ -103,8 +103,15 @@ vikunja:
     openid:
       enabled: false
       redirecturl: ""
-      providers: []
-      # - name: ""
+      # providers: {}
+      # yourprovider1:
+      #   name: ""
+      #   authurl: ""
+      #   logouturl: ""
+      #   clientid: ""
+      #   clientsecret: ""
+      # yourprovider2:
+      #   name: ""
       #   authurl: ""
       #   logouturl: ""
       #   clientid: ""

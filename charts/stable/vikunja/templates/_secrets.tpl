@@ -151,14 +151,25 @@ secret:
             {{- end }}
             {{- with .Values.vikunja.auth.openid.providers }}
             providers:
-              {{- range . }}
-              - name: {{ .name | quote }}
-                authurl: {{ .authurl | quote }}
-                {{- with .logouturl }}
+              {{- range $providerId, $provider := . }}
+              {{ $providerId }}:
+                name: {{ $provider.name | quote }}
+                authurl: {{ $provider.authurl | quote }}
+                clientid: {{ $provider.clientid | quote }}
+                clientsecret: {{ $provider.clientsecret | quote }}
+                {{- with $provider.logouturl }}
                 logouturl: {{ . | quote }}
                 {{- end }}
-                clientid: {{ .clientid | quote }}
-                clientsecret: {{ .clientsecret | quote }}
+                {{- with $provider.scope }}
+                scope: {{ . | quote }}
+                {{- else }}
+                scope: "openid profile email"
+                {{- end }}
+                {{- with $provider.forceuserinfo }}
+                forceuserinfo: {{ . }}
+                {{- else }}
+                forceuserinfo: false
+                {{- end }}
               {{- end }}
             {{- end }}
 
