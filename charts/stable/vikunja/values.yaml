@@ -103,19 +103,19 @@ vikunja:
     openid:
       enabled: false
       redirecturl: ""
-      # providers: {}
-      # yourprovider1:
-      #   name: ""
-      #   authurl: ""
-      #   logouturl: ""
-      #   clientid: ""
-      #   clientsecret: ""
-      # yourprovider2:
-      #   name: ""
-      #   authurl: ""
-      #   logouturl: ""
-      #   clientid: ""
-      #   clientsecret: ""
+      # providers:
+      #   yourprovider1:
+      #     name: ""
+      #     authurl: ""
+      #     logouturl: ""
+      #     clientid: ""
+      #     clientsecret: ""
+      #   yourprovider2:
+      #     name: ""
+      #     authurl: ""
+      #     logouturl: ""
+      #     clientid: ""
+      #     clientsecret: ""
   migration:
     todoist:
       enable: false
